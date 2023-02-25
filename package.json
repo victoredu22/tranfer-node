@@ -5,7 +5,8 @@
   "main": "dist/app.js",
   "scripts": {
     "dev": "nodemon src/app.ts",
-    "start": "tsc && node src/app.js"
+   
+    "start": "npm run build && nodemon src/app.ts"
   },
   "keywords": [],
   "author": "",
