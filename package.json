@@ -2,10 +2,10 @@
   "name": "ts-node",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/app.js",
   "scripts": {
     "dev": "nodemon src/app.ts",
-    "start": "nodemon src/app.ts"
+    "start": "tsc && node src/app.js"
   },
   "keywords": [],
   "author": "",

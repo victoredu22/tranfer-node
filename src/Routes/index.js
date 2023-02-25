@@ -1,0 +1,24 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const User_controller_1 = __importDefault(require("../Controllers/User.controller"));
+const User_validator_1 = __importDefault(require("../validators/User.validator"));
+const Bank_validator_1 = __importDefault(require("../validators/Bank.validator"));
+const rejectInvalid_1 = require("../middleware/rejectInvalid");
+const Bank_controller_1 = __importDefault(require("../Controllers/Bank.controller"));
+const Tranfer_controller_1 = __importDefault(require("../Controllers/Tranfer.controller"));
+const Payee_controller_1 = __importDefault(require("../Controllers/Payee.controller"));
+const router = (0, express_1.Router)();
+router.post("/user", (0, rejectInvalid_1.validate)(User_validator_1.default.validateCreate), User_controller_1.default.CreateUser);
+router.get("/user", User_controller_1.default.Index);
+router.post("/payees", (0, rejectInvalid_1.validate)(User_validator_1.default.validateCreate), Payee_controller_1.default.Create);
+router.get("/payees", Payee_controller_1.default.Index);
+router.get("/payees/:email", Payee_controller_1.default.Get);
+router.post("/bank", (0, rejectInvalid_1.validate)(Bank_validator_1.default.validateCreate), Bank_controller_1.default.Create);
+router.get("/bank", Bank_controller_1.default.Index);
+router.post("/tranfer", Tranfer_controller_1.default.createTranfer);
+router.get("/tranfer", Tranfer_controller_1.default.Index);
+exports.default = router;
