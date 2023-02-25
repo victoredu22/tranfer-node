@@ -7,6 +7,7 @@ import { validate } from "../middleware/rejectInvalid";
 
 import BankController from "../Controllers/Bank.controller";
 import TranferController from "../Controllers/Tranfer.controller";
+import PayeeController from "../Controllers/Payee.controller";
 
 const router = Router();
 
@@ -15,6 +16,18 @@ router.post(
   validate(validateUser.validateCreate),
   UserController.CreateUser
 );
+router.get("/user", UserController.Index);
+
+
+router.post(
+  "/payees",
+  validate(validateUser.validateCreate),
+  PayeeController.Create
+);
+router.get("/payees", PayeeController.Index);
+router.get("/payees/:email", PayeeController.Get);
+
+
 
 router.post(
   "/bank",
@@ -23,5 +36,7 @@ router.post(
 );
 router.get("/bank", BankController.Index);
 
+
 router.post("/tranfer", TranferController.createTranfer);
+router.get("/tranfer", TranferController.Index);
 export default router;

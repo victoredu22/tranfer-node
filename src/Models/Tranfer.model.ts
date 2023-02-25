@@ -6,9 +6,9 @@ export interface ITranfer extends Document {
 
 const TranferSchema: Schema = new Schema(
   {
-    user: {
+    payee: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "Payee",
       required: true,
       default: null,
     },

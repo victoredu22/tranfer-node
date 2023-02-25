@@ -22,13 +22,13 @@ const validateCreate = [
     .exists()
     .withMessage("phone must be a provided"),
   body("bank")
-    .isString()
-    .withMessage("bank must be a string")
+    .isNumeric()
+    .withMessage("bank must be a numeric")
     .exists()
     .withMessage("bank must be a provided"),
   body("typeAccount")
-    .isString()
-    .withMessage("typeAccount must be a string")
+    .isNumeric()
+    .withMessage("typeAccount must be a numeric")
     .exists()
     .withMessage("typeAccount must be a provided"),
   body("numberAccount")

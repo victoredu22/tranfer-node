@@ -7,7 +7,7 @@ export default () => {
   const connect = () => {
     mongoose
       .connect(
-        `mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@mongo:${process.env.MONGO_PORT}/${process.env.MONGO_DB}?authSource=admin`,
+        `mongodb+srv://victoredu22:Cz3mRMI1M7ayxSjW@cluster0.3xcjkc4.mongodb.net/db`,
         {
           useNewUrlParser: true,
           useUnifiedTopology: true,
