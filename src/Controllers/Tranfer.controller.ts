@@ -1,7 +1,6 @@
 import { RequestHandler } from "express";
 import PayeeModel from "../Models/Payee.model";
 import TranferModel, { ITranfer } from "../Models/Tranfer.model";
-import UserModel from "../Models/User.model";
 import { ErrorString } from "../Types/errors";
 
 const createTranfer: RequestHandler = async (req, res, next) => {
