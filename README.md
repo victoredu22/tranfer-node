@@ -14,7 +14,7 @@ Rest Api creada en node.js para proceso selección check, el cual consiste en cr
 - npm el manejador de paquetes
 - node framerwork js
 
-### Se clona el repositorio
+### Clonación el repositorio
 
 ```bash  
 git clone https://github.com/victoredu22/tranfer-node
